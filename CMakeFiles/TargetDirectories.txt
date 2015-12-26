@@ -1,0 +1,7 @@
+/home/gaoming/git/iio/libiio/CMakeFiles/iio.dir
+/home/gaoming/git/iio/libiio/tests/CMakeFiles/iio_adi_xflow_check.dir
+/home/gaoming/git/iio/libiio/tests/CMakeFiles/iio_genxml.dir
+/home/gaoming/git/iio/libiio/tests/CMakeFiles/iio_info.dir
+/home/gaoming/git/iio/libiio/tests/CMakeFiles/iio_readdev.dir
+/home/gaoming/git/iio/libiio/tests/CMakeFiles/iio_reg.dir
+/home/gaoming/git/iio/libiio/iiod/CMakeFiles/iiod.dir

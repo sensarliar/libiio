@@ -1,0 +1,1 @@
+/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-gcc   -fvisibility=hidden -O2 -g    CMakeFiles/iio_readdev.dir/iio_readdev.c.o  -o iio_readdev -rdynamic ../libiio.so.0.6 -Wl,-rpath,/home/gaoming/git/iio/libiio: 

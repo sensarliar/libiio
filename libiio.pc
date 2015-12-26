@@ -1,0 +1,13 @@
+prefix=/home/gaoming/git/iio/armhf-rootfs-debian-jessie
+exec_prefix=/home/gaoming/git/iio/armhf-rootfs-debian-jessie
+libdir=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib
+sharedlibdir=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib
+includedir=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/include
+
+Name: libiio
+Description: Library for interfacing IIO devices
+Version: 0.6
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -liio
+Cflags: -I${includedir}
