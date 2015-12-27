@@ -6,29 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/gaoming/git/iio/libiio/tests/iio_info.c
-errno.h
--
-getopt.h
--
-iio.h
--
-stdio.h
--
-stdlib.h
--
-string.h
--
-
-iio.h
-stdbool.h
--
-stdint.h
--
-stdlib.h
--
-sys/types.h
--
-stddef.h
--
-
