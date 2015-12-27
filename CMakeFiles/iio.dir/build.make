@@ -302,7 +302,7 @@ libiio.so.0.6: CMakeFiles/iio.dir/network.c.o
 libiio.so.0.6: CMakeFiles/iio.dir/xml.c.o
 libiio.so.0.6: CMakeFiles/iio.dir/lock.c.o
 libiio.so.0.6: CMakeFiles/iio.dir/iiod-client.c.o
-libiio.so.0.6: /home/gaoming/git/iio/armhf-rootfs-debian-jessie/usr/lib/arm-linux-gnueabihf/libxml2.so
+libiio.so.0.6: /home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib/libxml2.so
 libiio.so.0.6: /home/gaoming/git/iio/armhf-rootfs-debian-jessie/usr/lib/arm-linux-gnueabihf/libpthread.so
 libiio.so.0.6: CMakeFiles/iio.dir/build.make
 libiio.so.0.6: CMakeFiles/iio.dir/link.txt

@@ -46,28 +46,28 @@ CMakeFiles/iio.dir/utilities.c.o
  /home/gaoming/git/iio/libiio/iio.h
  /home/gaoming/git/iio/libiio/utilities.c
 CMakeFiles/iio.dir/xml.c.o
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/SAX.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/SAX2.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/dict.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/encoding.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/entities.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/globals.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/hash.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/list.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/parser.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/threads.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/tree.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/valid.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/xlink.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/xmlIO.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/xmlautomata.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/xmlerror.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/xmlexports.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/xmlmemory.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/xmlregexp.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/xmlstring.h
+ /home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/libxml/xmlversion.h
  /home/gaoming/git/iio/libiio/debug.h
  /home/gaoming/git/iio/libiio/iio-private.h
  /home/gaoming/git/iio/libiio/iio.h
  /home/gaoming/git/iio/libiio/xml.c
- libxml/SAX.h
- libxml/SAX2.h
- libxml/dict.h
- libxml/encoding.h
- libxml/entities.h
- libxml/globals.h
- libxml/hash.h
- libxml/list.h
- libxml/parser.h
- libxml/threads.h
- libxml/tree.h
- libxml/valid.h
- libxml/xlink.h
- libxml/xmlIO.h
- libxml/xmlautomata.h
- libxml/xmlerror.h
- libxml/xmlexports.h
- libxml/xmlmemory.h
- libxml/xmlregexp.h
- libxml/xmlstring.h
- libxml/xmlversion.h

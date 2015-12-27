@@ -11,8 +11,7 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
   "."
-  "/home/gaoming/git/iio/armhf-rootfs-debian-jessie"
-  "/home/gaoming/git/libxml2-2.7.8.dfsg"
+  "/home/gaoming/git/iio/armhf-rootfs-debian-jessie/include"
   "iiod"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})

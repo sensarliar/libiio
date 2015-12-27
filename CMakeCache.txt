@@ -188,8 +188,11 @@ LIBUSB_INCLUDE_DIR:PATH=LIBUSB_INCLUDE_DIR-NOTFOUND
 //Path to a library.
 LIBUSB_LIBRARIES:FILEPATH=LIBUSB_LIBRARIES-NOTFOUND
 
+//Path to a file.
+LIBXML2_INCLUDE_DIR:PATH=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/include
+
 //Path to a library.
-LIBXML2_LIBRARIES:FILEPATH=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/usr/lib/arm-linux-gnueabihf/libxml2.so
+LIBXML2_LIBRARIES:FILEPATH=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib/libxml2.so
 
 //Path to a program.
 LIBXML2_XMLLINT_EXECUTABLE:FILEPATH=/usr/bin/xmllint
@@ -199,6 +202,9 @@ MCS_EXECUTABLE:FILEPATH=MCS_EXECUTABLE-NOTFOUND
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
+//Path to a library.
+PTHREAD_LIBRARIES:FILEPATH=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/usr/lib/arm-linux-gnueabihf/libpthread.so
 
 //Install Python bindings
 PYTHON_BINDINGS:BOOL=ON
@@ -219,7 +225,7 @@ WITH_NETWORK_BACKEND:BOOL=ON
 WITH_TESTS:BOOL=ON
 
 //Dependencies for the target
-iio_LIB_DEPENDS:STATIC=general;/home/gaoming/git/iio/armhf-rootfs-debian-jessie/usr/lib/arm-linux-gnueabihf/libxml2.so;general;/home/gaoming/git/iio/armhf-rootfs-debian-jessie/usr/lib/arm-linux-gnueabihf/libpthread.so;
+iio_LIB_DEPENDS:STATIC=general;/home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib/libxml2.so;general;/home/gaoming/git/iio/armhf-rootfs-debian-jessie/usr/lib/arm-linux-gnueabihf/libpthread.so;
 
 //Value Computed by CMake
 iio_adi_xflow_check_BINARY_DIR:STATIC=/home/gaoming/git/iio/libiio/tests
@@ -399,7 +405,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_FLEX:INTERNAL=[/usr/bin/flex][v2.5.35()]
 //Details about finding Git
 FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v()]
 //Details about finding LibXml2
-FIND_PACKAGE_MESSAGE_DETAILS_LibXml2:INTERNAL=[/home/gaoming/git/iio/armhf-rootfs-debian-jessie/usr/lib/arm-linux-gnueabihf/libxml2.so][/home/gaoming/git/iio/armhf-rootfs-debian-jessie;/home/gaoming/git/libxml2-2.7.8.dfsg][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_LibXml2:INTERNAL=[/home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib/libxml2.so][/home/gaoming/git/iio/armhf-rootfs-debian-jessie/include][v()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.3()]
 //ADVANCED property for variable: FLEX_EXECUTABLE
@@ -424,6 +430,8 @@ INSTALL_INC_DIR-ADVANCED:INTERNAL=1
 INSTALL_LIB_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: INSTALL_PKGCONFIG_DIR
 INSTALL_PKGCONFIG_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBXML2_INCLUDE_DIR
+LIBXML2_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: LIBXML2_LIBRARIES
 LIBXML2_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: LIBXML2_XMLLINT_EXECUTABLE
