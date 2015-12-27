@@ -1,0 +1,21 @@
+ ../libxml2-2.7.2/configure                                  \
+      CC=mipsel-linux-gcc                                       \
+      CXX=mipsel-linux-g++                                    \
+      --build=i686-pc-linux-gnu                                \
+      --host=mipsel-linux                                         \
+      --prefix=/home/smp2/rootfs/cross_rootfs       \
+      --with-sysroot=/home/smp2/rootfs/cross_rootfs/
+
+
+
+./configure                                  \
+      CC=/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-gcc                                       \
+      CXX=/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-g++                                    \
+      --build=x86_64-unknown-linux-gnu                                \
+      --host=arm-unknown-linux-gnueabihf                                         \
+      --prefix=/home/gaoming/git/iio/armhf-rootfs-debian-jessie       \
+--exec-prefix=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/  \
+--with-python=/home/gaoming/git/libxml2-2.7.8.dfsg/python
+
+      --with-sysroot=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/  \
+--with-python=

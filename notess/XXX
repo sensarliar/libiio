@@ -1,0 +1,23 @@
+sudo cmake -DCMAKE_TOOLCHAIN_FILE=/usr/local/src/cross.cmake ./
+
+cmake -DCMAKE_TOOLCHAIN_FILE=/home/gaoming/git/iio/cross.cmake -DCMAKE_INSTALL_PREFIX=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/ ./
+
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/
+
+LDFLAGS = -L ../ -L /home/liyihai/rootfs_v2.0/usr/lib -L /home/liyihai/rootfs_v2/lib -L /home/liyihai/rootfs_build/lib_old  
+
+LDFLAGS += -L ../ -L -L /home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib -L /home/gaoming/git/iio/armhf-rootfs-debian-jessie/usr/lib -L /home/gaoming/git/iio/armhf-rootfs-debian-jessie -L ./
+
+'/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-ldd' --root '/home/gaoming/git/iio/armhf-rootfs-debian-jessie' '/home/gaoming/git/iio/libiio/libiio.so.0.6'
+
+'/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-ldd' --root '/home/gaoming/git/iio/armhf-rootfs-debian-jessie' /home/gaoming/git/libxml2-2.7.8.dfsg/.libs/libxml2.so.2.7.8
+
+
+/home/gaoming/git/iio/libiio:
+
+,-rpath-link, 
+
+
+'/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-ldd' --root '/home/gaoming/git/iio/armhf-rootfs-debian-jessie' /home/gaoming/git/iio/libiio/iiod/iiod
+
+'/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-ldd' --root '/home/gaoming/git/iio/armhf-rootfs-debian-jessie' /home/gaoming/git/iio/libiio/tests/iio_genxml
