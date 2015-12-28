@@ -1,0 +1,11 @@
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib/pkgconfig/libiio.pc
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib/libiio.so.0.6
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib/libiio.so.0
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/lib/libiio.so
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/include/iio.h
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/sbin/iiod
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/bin/iio_genxml
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/bin/iio_info
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/bin/iio_readdev
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/bin/iio_adi_xflow_check
+/home/gaoming/git/iio/armhf-rootfs-debian-jessie/bin/iio_reg
