@@ -644,7 +644,7 @@ static ssize_t network_get_buffer(const struct iio_device *dev,
 	ssize_t ret, read = 0;
 	int memfd;
 	bool tx;
-
+DEBUG("gaotest, call network_get_buffer1");
 	if (pdata->is_cyclic)
 		return -ENOSYS;
 
@@ -728,7 +728,7 @@ static ssize_t network_get_buffer(const struct iio_device *dev,
 
 		iio_mutex_unlock(pdata->lock);
 	}
-
+DEBUG("gaotest, call network_get_buffer2");
 	pdata->mmap_addr = mmap(NULL, pdata->mmap_len,
 			PROT_READ | PROT_WRITE, MAP_SHARED, pdata->memfd, 0);
 	if (pdata->mmap_addr == MAP_FAILED) {
@@ -798,7 +798,7 @@ static int network_set_trigger(const struct iio_device *dev,
 		const struct iio_device *trigger)
 {
 	struct iio_context_pdata *pdata = dev->ctx->pdata;
-
+	DEBUG("network_set_trigger was called...\n");
 	return iiod_client_set_trigger(pdata->iiod_client,
 			pdata->fd, dev, trigger);
 }

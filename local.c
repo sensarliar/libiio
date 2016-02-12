@@ -397,6 +397,7 @@ static ssize_t local_get_buffer(const struct iio_device *dev,
 	struct iio_device_pdata *pdata = dev->pdata;
 	int f = pdata->fd;
 	ssize_t ret;
+DEBUG("gaotest, call local_get_buffer1");
 
 	if (!pdata->is_high_speed)
 		return -ENOSYS;
@@ -404,7 +405,7 @@ static ssize_t local_get_buffer(const struct iio_device *dev,
 		return -EBADF;
 	if (!addr_ptr)
 		return -EINVAL;
-
+DEBUG("gaotest, call local_get_buffer2");
 	if (pdata->last_dequeued >= 0) {
 		struct block *last_block = &pdata->blocks[pdata->last_dequeued];
 
@@ -601,6 +602,7 @@ static ssize_t local_read_dev_attr(const struct iio_device *dev,
 	if (ret > 0)
 		dst[ret - 1] = '\0';
 	fflush(f);
+DEBUG("local_read_dev_attr() func is running ,read string is  %s from reg %s --dev %s attr%s\n",dst,buf,dev->id, attr);
 	if (ferror(f))
 		ret = -errno;
 	fclose(f);
@@ -623,6 +625,7 @@ static ssize_t local_write_dev_attr(const struct iio_device *dev,
 	else
 		snprintf(buf, sizeof(buf), "/sys/bus/iio/devices/%s/%s",
 				dev->id, attr);
+DEBUG("local_write_dev_attr func is running ,write--%s--reg--- %s to dev-- %s attr-- %s\n",src,buf,dev->id, attr);
 	f = fopen(buf, "w");
 	if (!f)
 		return -errno;
@@ -918,8 +921,10 @@ static int local_get_trigger(const struct iio_device *dev,
 	nb = dev->ctx->nb_devices;
 	for (i = 0; i < (size_t) nb; i++) {
 		const struct iio_device *cur = dev->ctx->devices[i];
+DEBUG("local_get_trigger number of devices %d,%s;trigger- current_trigger is %s\n",i,cur->name,buf);
 		if (cur->name && !strcmp(cur->name, buf)) {
 			*trigger = cur;
+DEBUG("local_get_trigger setting is ok,cur set to *trigger\n",i,cur->name,buf);
 			return 0;
 		}
 	}
@@ -930,9 +935,12 @@ static int local_set_trigger(const struct iio_device *dev,
 		const struct iio_device *trigger)
 {
 	ssize_t nb;
+	DEBUG("local_set_trigger was called...\n");
 	const char *value = trigger ? trigger->name : "";
+DEBUG("trigger name is %s\n",value);
 	nb = local_write_dev_attr(dev, "trigger/current_trigger",
 			value, strlen(value) + 1, false);
+DEBUG("return writing  bytes num  ,write %d\n",nb);
 	if (nb < 0)
 		return (int) nb;
 	else

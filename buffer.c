@@ -73,6 +73,8 @@ struct iio_buffer * iio_device_create_buffer(const struct iio_device *dev,
 		goto err_free_mask;
 
 	buf->dev_is_high_speed = device_is_high_speed(dev);
+
+DEBUG("liio_device_create_buffer was called, dev_is_high_speed is %d...\n",buf->dev_is_high_speed);
 	if (buf->dev_is_high_speed) {
 		/* Dequeue the first buffer, so that buf->buffer is correctly
 		 * initialized */
@@ -134,9 +136,11 @@ ssize_t iio_buffer_refill(struct iio_buffer *buffer)
 	if (buffer->dev_is_high_speed) {
 		read = dev->ctx->ops->get_buffer(dev, &buffer->buffer,
 				buffer->length, buffer->mask, dev->words);
+DEBUG("iio_buffer_refill called is_high_speed  ...\n");
 	} else {
 		read = iio_device_read_raw(dev, buffer->buffer, buffer->length,
 				buffer->mask, dev->words);
+DEBUG("iio_buffer_refill called is low speed  ...\n");
 	}
 
 	if (read >= 0) {
