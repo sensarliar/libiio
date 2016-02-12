@@ -1,0 +1,140 @@
+ ../libxml2-2.7.2/configure                                  \
+      CC=mipsel-linux-gcc                                       \
+      CXX=mipsel-linux-g++                                    \
+      --build=i686-pc-linux-gnu                                \
+      --host=mipsel-linux                                         \
+      --prefix=/home/smp2/rootfs/cross_rootfs       \
+      --with-sysroot=/home/smp2/rootfs/cross_rootfs/
+
+
+
+./configure                                  \
+      CC=/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-gcc                                       \
+      CXX=/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-g++                                    \
+      --build=x86_64-unknown-linux-gnu                                \
+      --host=arm-unknown-linux-gnueabihf                                         \
+      --prefix=/home/gaoming/git/iio/armhf-rootfs-debian-jessie       \
+--exec-prefix=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/  \
+--with-python=/home/gaoming/git/libxml2-2.7.8.dfsg/python
+
+      --with-sysroot=/home/gaoming/git/iio/armhf-rootfs-debian-jessie/  \
+--with-python=
+
+/media/rootfs
+
+
+
+./configure                                  \
+      CC=/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-gcc                                       \
+      CXX=/home/gaoming/git/iio/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-g++                                    \
+      --build=x86_64-unknown-linux-gnu                                \
+      --host=arm-unknown-linux-gnueabihf                                         \
+      --prefix=/home/gaoming/git/iio/armhf-rootfs-debian-jessie       \
+--exec-prefix=/media/rootfs/  \
+--with-python=/home/gaoming/git/libxml2-2.7.8.dfsg/python
+
+
+
+
+ls /sys/bus/iio/devices/iio:device0/
+
+cat /sys/devices/platform/bone_capemgr/slots
+
+sudo sh -c "echo BB-ADIS16480 > /sys/devices/platform/bone_capemgr/slots"
+
+sudo sh -c "echo BB-ADIS16375 > /sys/devices/platform/bone_capemgr/slots"
+sudo sh -c "echo -4 > /sys/devices/platform/bone_capemgr/slots"
+
+
+cp BB-ADIS16480-00A0.dtbo /lib/firmware
+
+rm /lib/firmware/BB-ADIS16480-00A0.dtbo
+
+
+dtc -O dtb -o BB-ADIS16480-00A0.dtbo -@ BB-ADIS16480-00A0.dts
+
+dtc -O dtb -o BB-ADIS16480-00A0.dtbo -b 0 -@ BB-ADIS16480-00A0.dts ----xxx
+
+cp BB-ADIS16480-00A0.dtbo /lib/firmware
+
+cat /proc/sys/kernel/printk
+echo 8 > /proc/sys/kernel/printk
+
+sudo sh -c "echo 1 > /proc/sys/kernel/core_uses_pid"
+
+sudo sh -c "echo "/home/gaoming/Videos/corefile-%e-%p-%t" > /proc/sys/kernel/core_pattern"
+/home/gaoming/Videos
+
+|/usr/share/apport/apport %p %s %c
+
+
+root@arm:~# cat /proc/interrupts
+           CPU0       
+ 16:      12322      INTC  68 Level     gp_timer
+ 19:          1      INTC  78 Level     wkup_m3_txev
+ 20:       2497      INTC  12 Level     edma
+ 22:         55      INTC  14 Level     edma_error
+ 23:          0      INTC  96 Level     44e07000.gpio
+ 30:          0  44e07000.gpio   6 Edge      48060000.mmc cd
+ 56:     975346      INTC  98 Level     4804c000.gpio
+ 74:     975348  4804c000.gpio  17 Edge      adis16480
+ 89:          0      INTC  32 Level     481ac000.gpio
+122:          0      INTC  62 Level     481ae000.gpio
+155:       1066      INTC  72 Level     44e09000.serial
+156:       3313      INTC  70 Level     44e0b000.i2c
+157:         22      INTC  30 Level     4819c000.i2c
+158:       7604      INTC  64 Level     mmc0
+160:          0      INTC  77 Level     wkup_m3
+166:          0      INTC  75 Level     rtc0
+167:          0      INTC  76 Level     rtc0
+169:       2221      INTC  41 Level     4a100000.ethernet
+170:        990      INTC  42 Level     4a100000.ethernet
+172:          0      INTC  20 Level     4a300000.pruss
+173:          0      INTC  21 Level     4a300000.pruss
+174:          0      INTC  22 Level     4a300000.pruss
+175:          0      INTC  23 Level     4a300000.pruss
+176:          0      INTC  24 Level     4a300000.pruss
+177:          0      INTC  25 Level     4a300000.pruss
+178:          0      INTC  26 Level     4a300000.pruss
+179:          0      INTC  27 Level     4a300000.pruss
+180:          0      INTC 109 Level     53100000.sham
+182:          0      INTC 111 Level     48310000.rng
+184:          0      INTC  18 Level     musb-hdrc.0.auto
+185:          1      INTC  19 Level     musb-hdrc.1.auto
+186:          0      INTC  17 Level     47400000.dma-controller
+187:          3      INTC   7 Level     tps65217
+IPI0:          0  CPU wakeup interrupts
+IPI1:          0  Timer broadcast interrupts
+IPI2:          0  Rescheduling interrupts
+IPI3:          0  Function call interrupts
+IPI4:          0  Single function call interrupts
+IPI5:          0  CPU stop interrupts
+IPI6:          0  IRQ work interrupts
+IPI7:          0  completion interrupts
+Err:          0
+root@arm:~# 
+
+ifconfig eth0 192.168.1.55
+echo 8 > /proc/sys/kernel/printk
+sudo sh -c "echo BB-ADIS16480 > /sys/devices/platform/bone_capemgr/slots"
+export IIOD_REMOTE=192.168.1.55
+
+
+cd /sys/bus/iio/devices/iio:device0/
+
+echo 1 > scan_elements/in_accel_x_en
+
+echo 1 > buffer/enable
+
+
+[  128.281249] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [kworker/0:0:4]
+[  156.279853] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [kworker/0:0:4]
+
+
+
+ [  203.831064] INFO: rcu_preempt self-detected stall on CPU { 0}  (t=2100 jiffies g=1223 c=1222 q=2)
+[  203.842382] rcu_preempt kthread starved for 2100 jiffies!
+[  228.280658] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [kworker/0:1:16]
+[  256.281287] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [kworker/0:1:16]
+[  266.859948] INFO: rcu_preempt self-detected stall on CPU { 0}  (t=8403 jiffies g=1223 c=1222 q=2)
+[  266.871186] rcu_preempt kthread starved for 8403 jiffies!

@@ -1,0 +1,156 @@
+https://rcn-ee.com/repos/latest
+
+
+wget --no-verbose ${mirror}/${dist}-${arch}/LATEST-${SOC}
+
+
+kernel="STABLE"
+mirror="https://rcn-ee.com/repos/latest"
+
+
+wheezy|jessie|stretch|sid)
+	dist="${get_dist}"
+
+arch=$(dpkg --print-architecture)
+current_kernel=$(uname -r)
+
+
+	--bone-kernel|--bone-channel)
+		SOC="omap-psp"
+
+
+	--ti-kernel|--ti-channel)
+		SOC="ti"
+
+
+wget https://rcn-ee.com/repos/latest/jessie-armhf/LATEST-ti
+
+
+wget -c https://rcn-ee.com/repos/debian/pool/main/l/linux-upstream/linux-image-3.8.13-bone79_1jessie_armhf.deb
+
+sudo ./update_kernel.sh --bone-channel --stable
+cd 
+
+sudo ./update_kernel.sh --ti-channel --stable
+
+
+sudo nano /etc/apt/sources.list
+
+http://security.debian.org/dists/jessie/updates/Release.gpg
+
+
+sudo nano /boot/uEnv.txt
+
+
+capemgr.enable_partno=BB-SPIDEV1
+
+
+cat /sys/devices/platform/bone_capemgr/slots
+ls -lh /dev/spi*
+
+sudo sh -c "echo 'BB-SPIDEV1' > /sys/devices/platform/bone_capemgr/slots"
+
+cd /home/debian
+./spi_test -D /dev/spidev1.0  
+
+cp BB-ADIS16480-00A0.dtbo /lib/firmware/
+
+
+lsmod
+
+Module                  Size  Used by
+spidev                  7642  0
+spi_omap2_mcspi        12869  0
+bnep                   15426  2
+usb_f_ecm              10794  1
+
+
+
+Linux arm 4.1.13-ti-r36 #1 SMP PREEMPT Fri Dec 11 02:35:26 UTC 2015 armv7l GNU/Linux
+
+
+
+ABI:1 LTS 4.1.14-bone17
+ABI:1 STABLE 3.8.13-bone79
+ABI:1 TESTING 4.3.2-bone2
+ABI:1 EXPERIMENTAL 4.4.0-rc4-bone0
+
+ABI:1 STABLE 4.1.13-ti-r36
+ABI:1 TESTING 4.1.13-ti-r33
+ABI:1 EXPERIMENTAL 4.4.0-rc4-ti-r3
+
+
+dtc -O dtb -o BB-ADIS16480-00A0.dtbo -b 0 -@ BB-ADIS16480-00A0.dts 
+dtc -O dtb -o BB-ADIS16375-00A0.dtbo -b 0 -@ BB-ADIS16375-00A0.dts 
+
+cat /sys/devices/platform/bone_capemgr/slots
+ls -lh /dev/spi*
+
+sudo sh -c "echo 'BB-ADIS16480' > /sys/devices/platform/bone_capemgr/slots"
+
+sudo sh -c "echo '-4' > /sys/devices/platform/bone_capemgr/slots"
+
+cd /home/debian
+./spi_test -D /dev/spidev1.0  
+
+
+cd /sys/bus/iio/devices/iio:device0
+
+root@arm:/sys/bus/iio/devices/iio:device0# cat in_accel_z_raw
+603979776
+
+
+-r--r--r-- 1 root root 4096 Dec 14 09:28 name
+lrwxrwxrwx 1 root root    0 Dec 14 09:28 of_node -> ../../../../../../../../firmware/devicetree/base/ocp/spi@481a0000/channel@1
+drwxr-xr-x 2 root root    0 Dec 14 09:28 power
+-rw-r--r-- 1 root root 4096 Dec 14 09:28 sampling_frequency
+
+
+cat  /sys/firmware/devicetree/base/ocp/spi@481a0000/channel@1/compatible
+
+
+cd /sys/bus/iio/devices/iio:device0
+
+cat /proc/sys/kernel/printk
+
+echo 8 8 > /proc/sys/kernel/printk
+
+crw------- 1 root root 246, 0 Dec 14 08:42 /dev/iio:device0
+
+
+root@arm:~# ls /dev/spi* -la
+crw-rw---- 1 root spi 153, 1 Dec 14 08:47 /dev/spidev3.0
+crw-rw---- 1 root spi 153, 0 Dec 14 08:47 /dev/spidev3.1
+
+root@arm:/sys/bus/iio/devices/iio:device0/subsystem/devices# ls -la
+total 0
+drwxr-xr-x 2 root root 0 Dec 14 09:11 .
+drwxr-xr-x 4 root root 0 Dec 14 09:11 ..
+lrwxrwxrwx 1 root root 0 Dec 14 09:07 iio:device0 -> ../../../devices/platform/ocp/481a0000.spi/spi_master/spi1/spi1.0/iio:device0
+
+
+sudo sh -c "echo 'BB-ADIS16375' > /sys/devices/platform/bone_capemgr/slots"
+
+sudo sh -c "echo 'BB-ADIS16480' > /sys/devices/platform/bone_capemgr/slots"
+
+cat /sys/bus/iio/devices/iio:device0/
+
+0.8mg=
+0.8*0.001*9.81
+=0.007848/65536
+=
+82036006
+
+0.8/65536*mg
+
+
+processed value = (raw + offset) * scale
+
+The units by the IIO framework are:
+
+Acceleration: Meter per Second squared
+Angular velocity: Rad per second
+Pressure: kilo Pascal
+Magnetometer: milli Gauss===========Gauss
+Temperature: milli Degree Celsius
+
